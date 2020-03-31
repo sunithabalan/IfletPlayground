@@ -1,0 +1,89 @@
+//count Function
+let song: String? = "Shake it Off"
+if let unwrappedSong = song {
+	print("The name has \(unwrappedSong.count) letters.")
+}
+//using nil statement
+let currentDestination: String? = nil
+if let destination = currentDestination {
+	print("We're walking to \(destination).")
+} else {
+	print("We're just wandering.")
+}
+// let menuItems: [String]? = ["Pizza", "Pasta"]
+// if let items = menuItems {
+// 	print("There are \(menuItems.count) items to choose from.")
+// }
+let album = "Red"
+let albums = ["Reputation", "Red", "1989"]
+if let position = albums.firstIndex(of: album) {
+	print("Found \(album) at position \(position).")
+}
+var winner: String? = nil
+winner = "Daley Thompson"
+if let name = winner {
+	print("And the winner is... \(name)!")
+}
+import Foundation
+// let names = ["John", "Paul", "George", "Ringo"]
+// let beatle = names.first?.uppercased()
+// let beatle1 = names.first?.lowercased()
+// print(beatle1)
+// struct Person {
+//   var firstname: String 
+//   var middlename: String?
+//   var lastname: String
+//   func fullName() -> () {
+//      if (middlename != nil) {
+//         print("Your fullname is \(firstname) \(middlename!) \(lastname)")  
+//      } else {
+//         print("Your fullname is \(firstname) \(lastname)")
+//      }
+     
+//   }
+// }
+
+// let anotherPerson = Person(firstname: "Abel", middlename: "Suji", lastname: "Adeyemi")
+
+// anotherPerson.fullName() //This will not throw an error
+// var Integer = [1,2,3,4,5]
+// print(Integer)
+class Person {
+    var residence: Residence?
+}
+class Residence {
+    var rooms = [Room]()
+    var numberOfRooms: Int {
+        return rooms.count
+    }
+    subscript(i: Int) -> Room {
+        get {
+            return rooms[i]
+        }
+        set {
+            rooms[i] = newValue
+        }
+    }
+    func printNumberOfRooms() {
+        print("The number of rooms is \(numberOfRooms)")
+    }
+    var address: Address?
+}
+class Room {
+    let name: String
+    init(name: String) { self.name = name }
+}
+class Address {
+    var buildingName: String?
+    var buildingNumber: String?
+    var street: String?
+    func buildingIdentifier() -> String? {
+        if let buildingNumber = buildingNumber, let street = street {
+            return "\(buildingNumber) \(street)"
+        } else if buildingName != nil {
+            return buildingName
+        } else {
+            return nil
+        }
+    }
+}
