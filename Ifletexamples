@@ -1,0 +1,26 @@
+//count Function
+let song: String? = "Shake it Off"
+if let unwrappedSong = song {
+	print("The name has \(unwrappedSong.count) letters.")
+}
+//using nil statement
+let currentDestination: String? = nil
+if let destination = currentDestination {
+	print("We're walking to \(destination).")
+} else {
+	print("We're just wandering.")
+}
+// let menuItems: [String]? = ["Pizza", "Pasta"]
+// if let items = menuItems {
+// 	print("There are \(menuItems.count) items to choose from.")
+// }
+let album = "Red"
+let albums = ["Reputation", "Red", "1989"]
+if let position = albums.firstIndex(of: album) {
+	print("Found \(album) at position \(position).")
+}
+var winner: String? = nil
+winner = "Daley Thompson"
+if let name = winner {
+	print("And the winner is... \(name)!")
+}
